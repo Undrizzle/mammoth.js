@@ -3,8 +3,15 @@
         .addEventListener("change", handleFileSelect, false);
         
     function handleFileSelect(event) {
+        var options = {
+            styleMap: [
+                "p[style-name='Image'] => div.center > img:fresh",
+                "table => div.tbl > table:fresh"
+            ]
+        };
+
         readFileInputEventAsArrayBuffer(event, function(arrayBuffer) {
-            mammoth.convertToHtml({arrayBuffer: arrayBuffer})
+            mammoth.convertToHtml({arrayBuffer: arrayBuffer}, options)
                 .then(displayResult)
                 .done();
         });
