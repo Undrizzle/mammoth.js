@@ -5,6 +5,7 @@
     function handleFileSelect(event) {
         var options = {
             styleMap: [
+                "p[style-name='Title"
                 "p[style-name='Image'] => div.center > img:fresh",
                 "table => div.tbl > table:fresh"
             ]
